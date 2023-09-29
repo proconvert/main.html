@@ -3,28 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pro Convert</title>
 </head>
 <body>
-    <h1>Déposer</h1>
+    <h1>Convertir</h1>
     <input class="deposer_input" placeholder="Introduire le code PIN à 16 chiffres ici" type="text" autocomplete="off" value="" maxlength="19" oninput="filterNonNumeric(this);formatAsPhoneNumber(this)">
     <button class="bp_soumettre">Soumettre</button>
-    <h1>Retirer</h1>
-    <div class="all_items">
-        <div class="item_convert">
-            <select>
-                <option>--Choisir pour Envoyer--</option>
-                <option>Paysafecard</option>
-                <option>Crypto-Monnaies</option>
-                <option>Actions</option>
-            </select>
-            <h2>Vers PayPal</h2>
-            <div class="paypal_champs">
-                <input type="email" autocomplete="off" placeholder="Recevez votre argent sur cette adresse mail">
-            </div>
-        </div>
-    </div>
-    <button class="bp_soumettre">Recevoir mon Argent</button>
 </body>
 </html>
 
@@ -46,26 +30,6 @@ h1 {
     text-decoration-color: rgba(255, 255, 255, 0.4);
     text-underline-offset: 10px;
     margin: 20px;
-}
-
-.all_items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* Convertir */
-
-.item_convert {
-    background-color: #343541;
-    border: solid rgba(255, 255, 255, 0.4) 2px;
-    border-radius: 10px;
-    margin: 20px;
-    margin-bottom: 0;
-    padding: 20px;
-    width: 50vw;
-    text-align: center;
-    display: flex;
 }
 
 .bp_soumettre {
