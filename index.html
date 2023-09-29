@@ -1,1 +1,131 @@
-Test
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Déposer</h1>
+    <input class="deposer_input" placeholder="Introduire le code PIN à 16 chiffres ici" type="text" autocomplete="off" value="" maxlength="19" oninput="filterNonNumeric(this);formatAsPhoneNumber(this)">
+    <button class="bp_soumettre">Soumettre</button>
+    <h1>Retirer</h1>
+    <div class="all_items">
+        <div class="item_convert">
+            <select>
+                <option>--Choisir pour Envoyer--</option>
+                <option>Paysafecard</option>
+                <option>Crypto-Monnaies</option>
+                <option>Actions</option>
+            </select>
+            <h2>Vers PayPal</h2>
+            <div class="paypal_champs">
+                <input type="email" autocomplete="off" placeholder="Recevez votre argent sur cette adresse mail">
+            </div>
+        </div>
+    </div>
+    <button class="bp_soumettre">Recevoir mon Argent</button>
+</body>
+</html>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background-color: #202123;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+    text-underline-offset: 10px;
+    margin: 20px;
+}
+
+.all_items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Convertir */
+
+.item_convert {
+    background-color: #343541;
+    border: solid rgba(255, 255, 255, 0.4) 2px;
+    border-radius: 10px;
+    margin: 20px;
+    margin-bottom: 0;
+    padding: 20px;
+    width: 50vw;
+    text-align: center;
+    display: flex;
+}
+
+.bp_soumettre {
+    background-color: #343541;
+    padding: 10px 0;
+    width: 20vw;
+    border: solid rgba(255, 255, 255, 0.4) 2px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: none;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.bp_soumettre:hover {
+    background-color: white;
+    color: #343541;
+}
+
+/* Déposer */
+
+.deposer_input {
+    background-color: #343541;
+    border: solid rgba(255, 255, 255, 0.4) 2px;
+    border-radius: 10px;
+    width: 40vw;
+    display: block;
+    margin: 0 auto;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+</style>
+
+<script>
+
+function filterNonNumeric(input) {
+    input.value = input.value.replace(/[^0-9]/g, '');
+}
+
+function formatAsPhoneNumber(input) {
+  // Supprime tout sauf les chiffres
+  let cleanedValue = input.value.replace(/\D/g, '');
+
+  // Sépare les chiffres en groupes de quatre
+  let formattedValue = '';
+  for (let i = 0; i < cleanedValue.length; i += 4) {
+    formattedValue += cleanedValue.substr(i, 4) + '-';
+  }
+
+  // Supprime le dernier tiret s'il y en a un en trop
+  if (formattedValue.endsWith('-')) {
+    formattedValue = formattedValue.slice(0, -1);
+  }
+
+  // Met à jour la valeur du champ de texte
+  input.value = formattedValue;
+}
+
+  </script>
