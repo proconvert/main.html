@@ -4,92 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro Convert</title>
+    <link rel="icon" href="ProConvertSimple.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header img {
+            width: 75px;
+            margin-right: 40%;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="email"],
+        input[type="number"] {
+            width: 97%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+        .performance p {
+            width: 200px;
+            padding: 20px 10px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: red;
+            color: white;
+            border: solid black 5px;
+        }
+        .reseaux a {
+            text-align: center;
+            width: 200px;
+            padding: 20px 10px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: #007bff;
+            color: white;
+        }
+        .center {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .avis a {
+            text-align: center;
+            width: 200px;
+            padding: 20px 10px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: rgb(43, 255, 0);
+            color: black;
+        }
+    </style>
 </head>
 <body>
-    <h1>Convertir</h1>
-    <input class="deposer_input" placeholder="Introduire le code PIN à 16 chiffres ici" type="text" autocomplete="off" value="" maxlength="19" oninput="filterNonNumeric(this);formatAsPhoneNumber(this)">
-    <button class="bp_soumettre">Soumettre</button>
+    <header>
+        <img src="ProConvertBack.png">
+        <h1>Pro Convert</h1>
+    </header>
+    <section>
+        <h2>Nouvelle transaction</h2>
+        <label>E-Mail PayPal</label>
+        <input type="email" autocapitalize="off">
+        <label>Valeur de la carte</label>
+        <input type="number" autocapitalize="off">
+        <label>Code PIN</label>
+        <input type="number" autocapitalize="off">
+        <button>Soumettre</button>
+
+        <h2>Pourquoi Choisir Pro Convert?</h2>
+        <div class="performance center">
+            <p class="center"><label style="font-weight : bolder;">Rapidité inégalée :</label>Convertissez vos PaySafeCard en argent PayPal en un temps record, sous <label style="font-weight : bolder;">24 heures maximum.</label></p>
+            <p class="center"><label style="font-weight : bolder;">Notre frais de conversion</label>s'élève à seulement 15%. Vous ne trouverez pas de tarif plus compétitif ailleurs.</p>
+            <p class="center"><label style="font-weight : bolder;">Pro Convert réunit une équipe exceptionnelle :</label> comprenant des développeurs de haut niveau et des convertisseurs de confiance.</p>
+        </div>
+
+        <h2>Dernières Transactions</h2>
+        <div class="avis center">
+            <a>
+                <label>m****1@gmail.com</label>
+                <p>à Convertie 50€</p>
+                <p>le 12/09/2023 à 19h47</p>
+            </a>
+            <a>
+                <label>m****1@gmail.com</label>
+                <p>à Convertie 50€</p>
+                <p>le 12/09/2023 à 19h47</p>
+            </a>
+            <a>
+                <label>m****1@gmail.com</label>
+                <p>à Convertie 50€</p>
+                <p>le 12/09/2023 à 19h47</p>
+            </a>
+            <a style="background-color: yellow;font-weight: bolder;border: solid black 5px;">+500 autres transactions</a>
+        </div>
+
+        <h2>Contact</h2>
+        <div class="reseaux center" target="_blank">
+            <a href="mailto:​Pro.Convert.2@gmail.com">
+                <label>Email</label>
+                <p>​Pro.Convert.2@gmail.com</p>
+            </a>
+            <a href="https://discord.gg/CnQvYJBDuj" target="_blank">
+                <label>Discord</label>
+                <p>discord.gg/CnQvYJBDuj</p>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p>DROITS D'AUTEUR © 2023-2024. TOUS DROITS RÉSERVÉS.</p>
+    </footer>
 </body>
 </html>
-
-<style>
-
-* {
-    margin: 0;
-    padding: 0;
-    color: white;
-}
-
-body {
-    background-color: #202123;
-}
-
-h1 {
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-color: rgba(255, 255, 255, 0.4);
-    text-underline-offset: 10px;
-    margin: 20px;
-}
-
-.bp_soumettre {
-    background-color: #343541;
-    padding: 10px 0;
-    width: 20vw;
-    border: solid rgba(255, 255, 255, 0.4) 2px;
-    border-radius: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-top: none;
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
-}
-
-.bp_soumettre:hover {
-    background-color: white;
-    color: #343541;
-}
-
-/* Déposer */
-
-.deposer_input {
-    background-color: #343541;
-    border: solid rgba(255, 255, 255, 0.4) 2px;
-    border-radius: 10px;
-    width: 40vw;
-    display: block;
-    margin: 0 auto;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-</style>
-
-<script>
-
-function filterNonNumeric(input) {
-    input.value = input.value.replace(/[^0-9]/g, '');
-}
-
-function formatAsPhoneNumber(input) {
-  // Supprime tout sauf les chiffres
-  let cleanedValue = input.value.replace(/\D/g, '');
-
-  // Sépare les chiffres en groupes de quatre
-  let formattedValue = '';
-  for (let i = 0; i < cleanedValue.length; i += 4) {
-    formattedValue += cleanedValue.substr(i, 4) + '-';
-  }
-
-  // Supprime le dernier tiret s'il y en a un en trop
-  if (formattedValue.endsWith('-')) {
-    formattedValue = formattedValue.slice(0, -1);
-  }
-
-  // Met à jour la valeur du champ de texte
-  input.value = formattedValue;
-}
-
-  </script>
