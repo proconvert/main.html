@@ -289,43 +289,4 @@ document.getElementById("close-btn").addEventListener("click", function() {
     document.body.style.overflow = "";
 });
 
-fetch('https://aquideo.000webhostapp.com/last_commands.json')
-  .then(response => response.json())
-  .then(data => {
-    // Inversez l'ordre des éléments du tableau pour les afficher de bas en haut
-    data.reverse();
-
-    // Limitez le nombre d'éléments affichés à 3 maximum
-    const limite = 3;
-    const elementsAffiches = data.slice(0, limite);
-
-    // Sélectionnez l'élément HTML avec la classe "avis"
-    const avisContainer = document.querySelector('.avis');
-
-    // Parcourez les éléments et créez des éléments HTML pour chaque élément JSON
-    elementsAffiches.forEach(element => {
-      const a = document.createElement('a');
-      const label = document.createElement('label');
-      label.textContent = element.email.replace(/(.{1,4})@(.+)/, '$1****@$2'); // Masquer une partie de l'adresse email
-      const p1 = document.createElement('p');
-      p1.textContent = `a Converti ${element.value}€`;
-      const p2 = document.createElement('p');
-      p2.textContent = `le ${element.date}`;
-      a.appendChild(label);
-      a.appendChild(p1);
-      a.appendChild(p2);
-      avisContainer.appendChild(a);
-    });
-
-    // Ajoutez un élément HTML pour afficher le nombre total de transactions dans le JSON
-    const totalTransactions = document.createElement('a');
-    totalTransactions.style.backgroundColor = 'yellow';
-    totalTransactions.style.fontWeight = 'bolder';
-    totalTransactions.style.border = 'solid black 5px';
-    totalTransactions.textContent = `Afficher le nombre total de transactions dans le .json (${data.length} transactions au total)`;
-    avisContainer.appendChild(totalTransactions);
-  })
-  .catch(error => console.error('Une erreur s\'est produite :', error));
-
-
 </script>
